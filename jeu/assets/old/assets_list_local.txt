@@ -1,0 +1,8 @@
+assets/animalspics/rouge.png
+assets/animalspics/bleu.png
+assets/animalspics/vert.png
+assets/animalspics/jaune.png
+assets/animalspics/gris.png
+assets/animalspics/rose.png
+assets/animalspics/blanc.png
+assets/animalspics/dino.png

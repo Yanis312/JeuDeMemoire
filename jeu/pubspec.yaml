@@ -31,24 +31,39 @@ dependencies:
   flutter:
     sdk: flutter
   flip_card: ^0.7.0
-  audioplayers: ^0.20.1
+  audioplayers: ^6.1.0
+  #^6.1.0  this is the latest version
+  #audioplayers: ^6.1.0 #Tasuqilt updated 
+  #added by tasuqilt to load assets file fom the cloud
+  http: ^1.2.2  # Check for the latest version on pub.dev
+  #Tasuqilt recommended by chatgpt
+  collection: ^1.18.0
+  http_parser: ^4.0.2
+  material_color_utilities: ^0.11.0
+  meta: ^1.15.0
+  string_scanner: ^1.2.0
+  path_provider: ^2.1.4
 
-
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.6
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^3.0.0
+  flutter_lints: ^5.0.0
+  #Tasuqilt recommended by chatgpt
+  leak_tracker: ^10.0.5
+  leak_tracker_flutter_testing: ^3.0.5
+  lints: ^5.0.0
+  stack_trace: ^1.11.1
+  test_api: ^0.7.2
+  vm_service: ^14.2.5
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.6
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -63,9 +78,17 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
 
+  # tasuqilt - added below    - assets_list.txt
   assets:
-    - assets/animalspics/
-    - assets/sounds/
+  #Tasuqilt - files loaded from the cloud
+  #  - assets/animalspics/
+  #  - assets/sounds/ 
+  #  - assets/assets_list.txt
+  #  - assets/sounds_list.txt
+  #  - assets/assets_images_sounds_list.txt
+    - assets/kab_word_photo_sound_mapping.txt
+    - assets/animalspics/quest.png
+  
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
@@ -95,3 +118,5 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+

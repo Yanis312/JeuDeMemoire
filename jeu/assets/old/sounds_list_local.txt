@@ -1,0 +1,8 @@
+assets/sounds/rouge.mp3
+assets/sounds/bleu.mp3
+assets/sounds/vert.mp3
+assets/sounds/jaune.mp3
+assets/sounds/gris.mp3
+assets/sounds/rose.mp3
+assets/sounds/blanc.mp3
+assets/sounds/dino.mp3

@@ -1,0 +1,99 @@
+https://d27s18bdmp7aby.cloudfront.net/kab_word_photo_sound_mapping.txt
+
+
+Ḥ  ḥ / Tibḥirt,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/Ḥa.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Alphabet/garden1.jpg 
+P  p / Lpari,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/Pa.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Alphabet/Paris1.jpg 
+Ṛ  ṛ / Lkaṛ,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/Ṛa.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Alphabet/bus1.jpg 
+S  s / Tasumta,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/Sa.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Alphabet/pillow.jpg 
+T  t / Tala / atriku,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/Ta.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Alphabet/fountain.jpg 
+Tt  tt / Tatteffaḥt,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/Tta.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Alphabet/apple.jpg 
+Azeggaɣ,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/azeggaɣ.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/color/red.png 
+Azegzaw,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/azegzaw.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/color/blue2.png 
+Azegzaw / Aḥcici / Adal,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/azegzaw_vert.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/color/green.png 
+Awraɣ,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/awraɣ.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/color/yellow2.png 
+Awerdi / Axuxi,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/awerdi.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/color/pink.png 
+Amellal,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/amellal.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/color/white.png 
+Ademdam / Iɣiɣdi,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/ademdam.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/color/grey.png 
+Izem,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/izem.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Animal_wild/lion3.jpg 
+Ilu / lfil,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/ilu.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Animal_wild/elephant2.jpg 
+Aksil,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/aksil.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Animal_wild/tiger.jpg 
+Amdeɣ,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/amdeɣ.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Animal_wild/giraffe3.jpg 
+Imisred / aɣyul n lexla,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/imisred.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Animal_wild/zebra.jpg 
+Ibki,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/ibki.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Animal_wild/monkey.jpg 
+Akanguru,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/akanguru.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Animal_wild/kangoroo.jpg 
+Ursu,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/ursu.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Animal_wild/bear.jpg 
+Abanɣu,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/abanɣu.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Animal_wild/hippo2.jpg 
+Aɣucaf,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/aɣucaf.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Animal_wild/crocodile.jpg 
+Abareɣ,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/abareɣ.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Animal_wild/fox.jpg 
+Amayas,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/amayas.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Animal_wild/cheetah3.jpg 
+Azrem,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/azrem.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Animal_wild/snake4.jpg 
+Azyam,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/azyam.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Animal_wild/dolphins.jpg 
+Amulab / aḥerbebbu / tazermemmuct,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/amulab.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Animal_wild/lizard2.jpg 
+Aydi / aqjun,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/aydi.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Animal_pets/dog.jpg 
+Aslem,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/aslem.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Animal_pets/fish.jpg 
+Ifker,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/Ifker.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Animal_pets/tortoise.jpg 
+Awtul,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/awtul.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Animal_pets/rabbit2.jpg 
+Aserdun,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/aserdun.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Animal_pets/mule.jpg 
+Agenduz,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/agenduz.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Animal_pets/calf.jpg 
+Azger,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/azger.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Animal_pets/beef2.jpg 
+Tixsi,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/tixsi.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Animal_pets/sheep.jpg 
+Izimer,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/izimer.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Animal_pets/lamb.jpg 
+Taɣaṭ,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/taɣaṭ.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Animal_pets/goat.jpg 
+Ilef / Aḥelluf,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/ilef.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Animal_pets/pig2.jpg 
+Abṛik,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/abrik.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Animal_pets/duck.jpg 
+Aslem azeggaɣ,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/aslem_azeggaɣ.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Animal_pets/Goldfish.jpg 
+Aferṭeṭṭu,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/aferṭeṭṭu.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Insects/butterfly.jpg 
+Tizizwit,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/tizizwit.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Insects/bee2.jpg 
+Tissist,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/tissist.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Insects/spider.jpg 
+Aburbu,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/aburbu.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Insects/caterpillar.jpg 
+Ajṛad,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/ajrad.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Insects/grasshopper.jpg 
+Mezzerɣel,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/mezzerɣel.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Insects/dragonfly.jpg 
+Axunfes,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/axunfes.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Insects/beetle.jpg 
+Tabanant,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/tabanant.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Fruits/Banana.jpg 
+Tačinat,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/tacinat.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Fruits/orange1.jpg 
+Tiẓurin / aḍil,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/tizurin.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Fruits/grapes.jpg 
+Lifriz,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/lifriz.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Fruits/strawberry.jpg 
+Dellaɛ,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/dela.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Fruits/watermelon2.jpg 
+Ananas,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/ananas.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Fruits/pineapple.jpg 
+Takiwit,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/takiwit.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Fruits/kiwi.jpg 
+Tifirest,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/tifirest.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Fruits/pear.jpg 
+Taxuxet,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/taxuxet.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Fruits/peach.jpg 
+Areḍlim,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/aredlim.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Fruits/cherry.jpg 
+Tizwal,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/tizwal.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Fruits/Raspberry.jpg 
+Taqarest,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/taqarest.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Fruits/lemon.jpg 
+Llim,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/lqares_az.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Fruits/lime.jpg 
+Ṭumaṭic,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/tumatic.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/vegetables/Tomato.jpg 
+Baṭaṭa,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/batata.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/vegetables/Potato.jpg 
+Lekṛemb,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/lekremb.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/vegetables/cabbage.jpg 
+Cclaḍa,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/cclada.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/vegetables/Lettuce.jpg 
+Taxsayt,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/taxsayt.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/vegetables/Pumpkin.jpg 
+Aguglu,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/aguglu.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/foods/Cheese.jpg 
+Aɣrum,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/aghrum.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/foods/BreadLoaf.jpg 
+Aḍil,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/adil.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/foods/Grapes1.jpg 
+Ccikula,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/ccikula.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/foods/chocolat.jpg 
+Tamellalt,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/tamel.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/foods/egg.jpg 
+Hamburger,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/amber.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/foods/hamburger.jpg 
+Takeṛṛust,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/takerrust.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/vehicles/car2.jpg 
+Lkaṛ,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/lkar.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/vehicles/bus.jpg 
+Avilu,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/avilu.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/vehicles/bike.jpg 
+Akamyun,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/akamyun.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/vehicles/truck.jpg 
+Tamacint,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/tamacint.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/vehicles/train.jpg 
+Lbabuṛ,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/lbabur.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/vehicles/boat4.jpg 
+Asafag,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/asafag.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/vehicles/plane4.jpg 
+Amuṭu,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/amutu.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/vehicles/motorbike.jpg 
+Akamyun n yimsexsiyen,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/akam.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/vehicles/firetruck.jpg 
+Iṭij,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/itij.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/weather/sun.jpg 
+Asigna,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/asigna.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/weather/cloud2.jpg 
+Adfel,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/adfel.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/weather/snow.jpg 
+Ssiwan,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/ssiwan.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/weather/umbrella.jpg 
+Tagut,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/tagut.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/weather/haze2.jpg 
+Adlis,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/adlis.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/school/Book2.jpg 
+Aqrab n uɛrur,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/aqrab_n.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/school/backpack.jpg 
+Takurt n Wakal,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/takurt_nwakal.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/school/globe.jpg 
+Timqestin,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/timqestin.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/school/scissors.jpg 
+Taẓuri,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/tazuri.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/school/art4.jpg 
+Akersi,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/akersi.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Athome/chair.jpg 
+Tilivizyu,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/tilivizyu.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Athome/television.jpg 
+Ṭṭaq,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/ttaq.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Athome/window.jpg 
+Tamrilt,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/tamrilt.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Athome/clock.jpg 
+Aqedduḥ,https://d27s18bdmp7aby.cloudfront.net/pistes_maternelle/aqedduh.mp3,https://d27s18bdmp7aby.cloudfront.net/images_jeu/Inthekitchen/bowl.jpg 

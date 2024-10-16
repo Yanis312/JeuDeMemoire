@@ -1,255 +1,383 @@
-import 'package:flip_card/flip_card.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-import 'package:audioplayers/audioplayers.dart';
 import 'dart:async';
-import 'data.dart';
+
+import 'package:audioplayers/audioplayers.dart';
+import 'package:flip_card/flip_card.dart';
+import 'package:flutter/material.dart';
+
+import 'data.dart'; // Assume this is where you have definitions for Level and Asset
 
 class FlipCardGame extends StatefulWidget {
-  final Level _level;
-  const FlipCardGame(this._level, {super.key});
+  final Level level;
+  const FlipCardGame(this.level, {super.key});
 
   @override
-  // ignore: library_private_types_in_public_api, no_logic_in_create_state
-  _FlipCardGameState createState() => _FlipCardGameState(_level);
+  FlipCardGameState createState() => FlipCardGameState();
 }
 
-class _FlipCardGameState extends State<FlipCardGame> {
-  _FlipCardGameState(this._level);
-
+class FlipCardGameState extends State<FlipCardGame> {
   int _previousIndex = -1;
   bool _flip = false;
-  bool _start = false;
   bool _wait = false;
-  final Level _level;
-  late Timer _timer;
-  int _time = 5;
   int _left = 0;
   bool _isFinished = false;
-  List<String> _data = [];
+  List<Asset> _assets = [];
   List<bool> _cardFlips = [];
   List<GlobalKey<FlipCardState>> _cardStateKeys = [];
-  final AudioCache _audioCache = AudioCache(prefix: 'assets/sounds/');
-
-  Widget getItem(int index) {
-    return Container(
-      decoration: BoxDecoration(
-          color: Colors.grey[100],
-          boxShadow: const [
-            BoxShadow(
-              color: Colors.black45,
-              blurRadius: 3,
-              spreadRadius: 0.8,
-              offset: Offset(2.0, 1),
-            )
-          ],
-          borderRadius: BorderRadius.circular(5)),
-      margin: const EdgeInsets.all(4.0),
-      child: Image.asset(_data[index]),
-    );
-  }
-
-  void playSound(String imagePath) {
-    String soundFileName = '${imagePath.split('/').last.split('.').first}.mp3';
-    _audioCache.play(soundFileName);
-  }
-
-  int getStartTime(Level level) {
-    switch (level) {
-      case Level.easy:
-        return 2;
-      case Level.medium:
-        return 4;
-      case Level.hard:
-        return 6;
-      default:
-        return 5;
-    }
-  }
-
-  void startTimer() {
-    _timer = Timer.periodic(const Duration(seconds: 1), (t) {
-      setState(() {
-        _time = _time - 1;
-      });
-    });
-  }
-
-  void restart() {
-    _time = getStartTime(_level);
-    startTimer();
-    _data = getSourceArray(_level);
-    _cardFlips = getInitialItemState(_level);
-    _cardStateKeys = getCardStateKeys(_level);
-    _left = (_data.length ~/ 2);
-    _isFinished = false;
-    Future.delayed(Duration(seconds: _time + 1), () {
-      setState(() {
-        _start = true;
-        _timer.cancel();
-      });
-    });
-  }
+  Stopwatch _stopwatch = Stopwatch();
+  Timer? _timer;
+  int _moveCount = 0;
 
   @override
   void initState() {
     super.initState();
-    restart();
+    _loadInitialState();
+    _stopwatch.start();
+    _timer = Timer.periodic(Duration(seconds: 1), (timer) => setState(() {}));
   }
 
   @override
   void dispose() {
-    _timer.cancel();
+    _timer?.cancel();
+    _stopwatch.stop();
     super.dispose();
   }
 
+  Future<void> _loadInitialState() async {
+    _assets = await getSourceArray(widget.level);
+    _cardFlips = List.generate(_assets.length, (_) => false);
+    _cardStateKeys =
+        List.generate(_assets.length, (_) => GlobalKey<FlipCardState>());
+    _left = _assets.length ~/ 2;
+    _moveCount = 0;
+    setState(() {});
+  }
+/*
+  void playSound(String soundUrl) {
+    if (soundUrl.isNotEmpty) {
+      AudioPlayer audioPlayer = AudioPlayer();
+      audioPlayer.play(UrlSource(soundUrl));
+    }
+  }
+  */
+void playSound(String soundUrl) async {
+  if (soundUrl.isNotEmpty) {
+    AudioPlayer audioPlayer = AudioPlayer();
+    try {
+      await audioPlayer.setSource(UrlSource(soundUrl));
+      await audioPlayer.resume();
+    } catch (e) {
+      print('Error playing sound: $e');
+    }
+  }
+}
+
   @override
   Widget build(BuildContext context) {
-    return _isFinished
-        ? Scaffold(
-            body: Center(
-              child: GestureDetector(
-                onTap: () {
-                  setState(() {
-                    restart();
-                  });
-                },
-                child: Container(
-                  height: 50,
-                  width: 200,
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(24),
-                  ),
-                  child: const Text(
-                    "Replay",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 17,
-                        fontWeight: FontWeight.w500),
-                  ),
-                ),
+    return Scaffold(
+      appBar: AppBar(
+        title: Column(
+          crossAxisAlignment:
+              CrossAxisAlignment.start, // Align text to the left
+          children: [
+            Text(
+              'Cartes retournées: $_moveCount - Temps: ${elapsedTime()}',
+              style: TextStyle(
+                fontSize: 16.0, // Adjust the font size here
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
               ),
             ),
-          )
-        : Scaffold(
-            body: SafeArea(
-              child: SingleChildScrollView(
-                child: Column(
-                  children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: _time > 0
-                          ? Text(
-                              '$_time',
-                              style: Theme.of(context).textTheme.headlineMedium,
-                            )
-                          : Text(
-                              'Left:$_left',
-                              style: Theme.of(context).textTheme.headlineMedium,
-                            ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(4.0),
-                      child: GridView.builder(
-                        shrinkWrap: true,
-                        physics: const NeverScrollableScrollPhysics(),
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: _level == Level.hard
-                              ? 8
-                              : (_level == Level.medium ? 6 : 4),
-                        ),
-                        itemBuilder: (context, index) => _start
-                            ? FlipCard(
-                                key: _cardStateKeys[index],
-                                onFlip: () {
-                                  if (!_flip) {
-                                    _flip = true;
-                                    _previousIndex = index;
-                                  } else {
-                                    _flip = false;
-                                    if (_previousIndex != index) {
-                                      if (_data[_previousIndex] != _data[index]) {
-                                        _wait = true;
-                                        Future.delayed(
-                                            const Duration(milliseconds: 1500),
-                                            () {
-                                          _cardStateKeys[_previousIndex]
-                                              .currentState
-                                              ?.toggleCard();
-                                          _previousIndex = index;
-                                          _cardStateKeys[_previousIndex]
-                                              .currentState
-                                              ?.toggleCard();
+            SizedBox(height: 4.0), // Add space between the two lines
+            Text(
+              'Tourner une seule carte à la fois!',
+              style: TextStyle(
+                fontSize: 12.0, // Set desired font size for the second line
+                color: Colors.redAccent, // Adjust color as needed
+              ),
+            ),
+          ],
+        ),
+      ),
+      body: SafeArea(
+        child: _isFinished ? _buildFinishedScreen() : _buildGameScreen(),
+      ),
+    );
+  }
 
-                                          Future.delayed(
-                                              const Duration(milliseconds: 160),
-                                              () {
-                                            setState(() {
-                                              _wait = false;
-                                            });
-                                          });
-                                        });
-                                      } else {
-                                        _cardFlips[_previousIndex] = false;
-                                        _cardFlips[index] = false;
-                                        playSound(_data[index]);
-                                        if (kDebugMode) {
-                                          print(_cardFlips);
-                                        }
-                                        setState(() {
-                                          _left -= 1;
-                                        });
-                                        if (_cardFlips.every((t) => t == false)) {
-                                          if (kDebugMode) {
-                                            print("Won");
-                                          }
-                                          Future.delayed(
-                                              const Duration(milliseconds: 160),
-                                              () {
-                                            setState(() {
-                                              _isFinished = true;
-                                              _start = false;
-                                            });
-                                          });
-                                        }
-                                      }
-                                    }
-                                    setState(() {});
-                                  }
-                                },
-                                flipOnTouch: _wait ? false : _cardFlips[index],
-                                direction: FlipDirection.HORIZONTAL,
-                                front: Container(
-                                  decoration: BoxDecoration(
-                                      color: Colors.grey,
-                                      borderRadius: BorderRadius.circular(5),
-                                      boxShadow: const [
-                                        BoxShadow(
-                                          color: Colors.black45,
-                                          blurRadius: 3,
-                                          spreadRadius: 0.8,
-                                          offset: Offset(2.0, 1),
-                                        )
-                                      ]),
-                                  margin: const EdgeInsets.all(4.0),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Image.asset(
-                                      "assets/animalspics/quest.png",
-                                    ),
-                                  ),
-                                ),
-                                back: getItem(index))
-                            : getItem(index),
-                        itemCount: _data.length,
-                      ),
-                    ),
-                  ],
+/*
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Cartes retournées: $_moveCount - Temps: ${elapsedTime()}'),
+      ),
+      body: SafeArea(
+        child: _isFinished ? _buildFinishedScreen() : _buildGameScreen(),
+      ),
+    );
+  }
+  */
+
+  String elapsedTime() {
+    return _stopwatch.elapsed.inMinutes.toString().padLeft(2, '0') +
+        ':' +
+        _stopwatch.elapsed.inSeconds.remainder(60).toString().padLeft(2, '0');
+  }
+
+  Widget _buildFinishedScreen() {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          const Text('Félicitations ! Vous avez terminé le jeu !',
+              style: TextStyle(
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.blue)),
+          ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  _loadInitialState();
+                  _isFinished = false;
+                  _stopwatch.reset();
+                  _stopwatch.start();
+                });
+              },
+              child: const Text('Play Again'))
+        ],
+      ),
+    );
+  }
+
+/*
+  void _onFlip(int index) {
+    if (_wait || _cardFlips[index])
+      return; // Ignore if wait state or card already flipped
+
+    if (!_flip) {
+      _flip = true;
+      _previousIndex = index;
+    } else {
+      if (_previousIndex == index) {
+        // Clicked same card, ignore
+        _flip = false;
+      } else {
+        _moveCount++;
+        _wait = true;
+        Future.delayed(const Duration(milliseconds: 1000), () {
+          if (_assets[_previousIndex].imageUrl == _assets[index].imageUrl) {
+            _cardFlips[_previousIndex] = true;
+            _cardFlips[index] = true;
+            playSound(_assets[index].soundUrl);
+            _left -= 1;
+            if (_left == 0) {
+              Future.delayed(const Duration(seconds: 3), () {
+                setState(() {
+                  _isFinished = true; // Set finished state after 3 seconds
+                  _stopwatch.stop();
+                });
+              });
+            }
+          } else {
+            _cardStateKeys[_previousIndex].currentState?.toggleCard();
+            _cardStateKeys[index].currentState?.toggleCard();
+          }
+          _flip = false;
+          _wait = false;
+          setState(() {});
+        });
+      }
+    }
+  }
+*/
+void _onFlip(int index) {
+  if (_wait || _cardFlips[index])
+    return; // Ignore if wait state or card already flipped
+
+  // Show the card in a big format (popup) for 1 second for both the first and second flip
+  _showCardPopUp(index);
+
+  if (!_flip) {
+    _flip = true;
+    _previousIndex = index;
+  } else {
+    if (_previousIndex == index) {
+      // Clicked same card, ignore
+      _flip = false;
+    } else {
+      _moveCount++;
+      _wait = true;
+
+      Future.delayed(const Duration(milliseconds: 2000), () {
+        if (_assets[_previousIndex].imageUrl == _assets[index].imageUrl) {
+          _cardFlips[_previousIndex] = true;
+          _cardFlips[index] = true;
+          playSound(_assets[index].soundUrl);
+          _left -= 1;
+          if (_left == 0) {
+            Future.delayed(const Duration(seconds: 3), () {
+              setState(() {
+                _isFinished = true; // Set finished state after 3 seconds
+                _stopwatch.stop();
+              });
+            });
+          }
+        } else {
+          _cardStateKeys[_previousIndex].currentState?.toggleCard();
+          _cardStateKeys[index].currentState?.toggleCard();
+        }
+        _flip = false;
+        _wait = false;
+        setState(() {});
+      });
+    }
+  }
+}
+
+// Show the card in a big format for 1 second
+void _showCardPopUp(int index) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return Dialog(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        child: Container(
+          padding: const EdgeInsets.all(20.0),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Image.network(_assets[index].imageUrl, fit: BoxFit.cover),
+              const SizedBox(height: 10),
+              Text(
+                _assets[index].imageName,
+                style: TextStyle(
+                  fontSize: 20.0, // Larger font size for the pop-up
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
                 ),
               ),
+            ],
+          ),
+        ),
+      );
+    },
+  );
+
+  // Automatically dismiss the dialog after 1 second
+  Future.delayed(const Duration(seconds: 1), () {
+    Navigator.of(context).pop();
+  });
+}
+
+
+
+//flip card end code
+
+
+  Widget _buildGameScreen() {
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              'Paires restantes: $_left',
+              style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                    fontSize: 16.0, // Set the desired font size here
+                  ),
             ),
-          );
+          ),
+          /*
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text('Paires restantes: $_left',
+                style: Theme.of(context).textTheme.headlineMedium),
+          ),
+          */
+          GridView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: widget.level == Level.hard
+                  ? 8
+                  : widget.level == Level.medium
+                      ? 6
+                      : 4,
+            ),
+            itemCount: _assets.length,
+            itemBuilder: (context, index) => FlipCard(
+              key: _cardStateKeys[index],
+              flipOnTouch: !_cardFlips[index] && !_wait,
+              onFlip: () => _onFlip(index),
+              direction: FlipDirection.HORIZONTAL,
+              front: Container(
+                decoration: BoxDecoration(
+                    color: Colors.grey,
+                    borderRadius: BorderRadius.circular(5),
+                    boxShadow: const [
+                      BoxShadow(
+                          color: Colors.black45,
+                          blurRadius: 3,
+                          spreadRadius: 0.8,
+                          offset: Offset(2.0, 1))
+                    ]),
+                margin: const EdgeInsets.all(4.0),
+                child: Padding(
+                  padding: const EdgeInsets.all(0),
+                  child: Image.asset("assets/animalspics/quest.png",
+                      fit: BoxFit.cover), // Placeholder image
+                ),
+              ),
+              back: getItem(index),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget getItem(int index) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.grey[100],
+        borderRadius: BorderRadius.circular(5),
+        boxShadow: const [
+          BoxShadow(
+              color: Colors.black45,
+              blurRadius: 3,
+              spreadRadius: 0.8,
+              offset: Offset(2, 1))
+        ],
+      ),
+      margin: const EdgeInsets.all(4.0),
+      child: Stack(
+        alignment: Alignment.topCenter,
+        children: [
+          Image.network(_assets[index].imageUrl, fit: BoxFit.cover,
+              errorBuilder: (context, error, stackTrace) {
+            return Text("Erreur", // de chargement de l'image
+                style: TextStyle(color: Colors.red, fontSize: 14.0));
+          }),
+          Container(
+            padding: const EdgeInsets.all(0),
+            color: Colors.black54,
+            child: Text(
+              _assets[index].imageName,
+              style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 14.0 // Set your custom font size here)
+                  ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
